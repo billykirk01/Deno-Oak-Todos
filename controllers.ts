@@ -1,5 +1,5 @@
 import { Context, helpers } from "https://deno.land/x/oak/mod.ts";
-import { Database } from "https://deno.land/x/aloedb/mod.ts";
+import { Database } from "https://raw.githubusercontent.com/Kirlovon/AloeDB/master/mod.ts";
 import { Todo } from "./db/todos/todo.ts";
 
 export async function getAllTodos(ctx: Context) {
