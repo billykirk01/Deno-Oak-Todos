@@ -1,6 +1,6 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import { green, yellow } from "https://deno.land/std/fmt/colors.ts";
-import { getAllTodos, getTodoById } from "./controllers.ts";
+import { createTodo, getAllTodos, getTodoById } from "./controllers.ts";
 
 const port = 8000;
 const app = new Application();
@@ -23,7 +23,8 @@ app.use(async (ctx, next) => {
 
 router
   .get("/", getAllTodos)
-  .get("/todo/:id", getTodoById);
+  .get("/todo/:id", getTodoById)
+  .put("/todo", createTodo);
 
 app.use(router.routes());
 app.use(router.allowedMethods());
